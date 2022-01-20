@@ -2,6 +2,5 @@
 
 ![A link](https://github.com)
 
-[link]
 
-# best spiderman(andrew garfield)
+# best [] spiderman(andrew garfield)
