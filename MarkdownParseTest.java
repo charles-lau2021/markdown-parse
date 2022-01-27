@@ -35,7 +35,6 @@ public class MarkdownParseTest {
             MarkdownParse.getLinks(breaking_test)
         );
     }
-
     @Test
     public void testGetLinks_breakingTest2() throws IOException {
         String breaking_test_2 =
@@ -47,7 +46,6 @@ public class MarkdownParseTest {
             MarkdownParse.getLinks(breaking_test_2)
         );
     }
-
     @Test
     public void testGetLinks_breakingTest3() throws IOException {
         String breaking_test_3 =
@@ -57,6 +55,87 @@ public class MarkdownParseTest {
             "(missing closing parenthesis)",
             List.of(),
             MarkdownParse.getLinks(breaking_test_3)
+        );
+    }
+
+    /*
+     * TEST FILES 2-8
+     */
+    @Test
+    public void testGetLinks_testilFile2() throws IOException {
+        String str =
+            Files.readString(Path.of("test-file2.md"));
+        assertEquals(
+            "getLinks() should find no link in an invalid file " +
+            "(missing closing parenthesis)",
+            List.of("https://something.com", "some-page.html"),
+            MarkdownParse.getLinks(str)
+        );
+    }
+    @Test
+    public void testGetLinks_testilFile3() throws IOException {
+        String str =
+            Files.readString(Path.of("test-file3.md"));
+        assertEquals(
+            "getLinks() should find no link in an invalid file " +
+            "(missing closing parenthesis)",
+            List.of(),
+            MarkdownParse.getLinks(str)
+        );
+    }
+    @Test
+    public void testGetLinks_testilFile4() throws IOException {
+        String str =
+            Files.readString(Path.of("test-file4.md"));
+        assertEquals(
+            "getLinks() should find no link in an invalid file " +
+            "(missing closing parenthesis)",
+            List.of(),
+            MarkdownParse.getLinks(str)
+        );
+    }
+    @Test
+    public void testGetLinks_testilFile5() throws IOException {
+        String str =
+            Files.readString(Path.of("test-file5.md"));
+        assertEquals(
+            "getLinks() should find no link in an invalid file " +
+            "(missing closing parenthesis)",
+            List.of(),
+            MarkdownParse.getLinks(str)
+        );
+    }
+    @Test
+    public void testGetLinks_testilFile6() throws IOException {
+        String str =
+            Files.readString(Path.of("test-file6.md"));
+        assertEquals(
+            "getLinks() should find no link in an invalid file " +
+            "(missing closing parenthesis)",
+            List.of(),
+            MarkdownParse.getLinks(str)
+        );
+    }
+    @Test
+    public void testGetLinks_testilFile7() throws IOException {
+        String str =
+            Files.readString(Path.of("test-file7.md"));
+        assertEquals(
+            "getLinks() should find no link in an invalid file " +
+            "(missing closing parenthesis)",
+            List.of(),
+            MarkdownParse.getLinks(str)
+        );
+    }
+    @Test
+    public void testGetLinks_testilFile8() throws IOException {
+        String str =
+            Files.readString(Path.of("test-file8.md"));
+        assertEquals(
+            "getLinks() should find no link in an invalid file " +
+            "(missing closing parenthesis)",
+            List.of(),
+            MarkdownParse.getLinks(str)
         );
     }
 }
