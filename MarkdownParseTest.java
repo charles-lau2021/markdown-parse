@@ -22,4 +22,41 @@ public class MarkdownParseTest {
             MarkdownParse.getLinks(test_file)
         );
     }
+
+    @Test
+    public void testGetLinks_breakingTest() throws IOException {
+        String breaking_test = Files.readString(Path.of("breaking_test.md"));
+        assertEquals(
+            "getLinks() should find only valid links",
+            List.of(
+                "https://github.com/Cubified",
+                "https:/https://ucsd-cse15l-w22.github.io/week/week3"
+            ),
+            MarkdownParse.getLinks(breaking_test)
+        );
+    }
+
+    @Test
+    public void testGetLinks_breakingTest2() throws IOException {
+        String breaking_test_2 =
+            Files.readString(Path.of("breaking_test_2.md"));
+        assertEquals(
+            "getLinks() should find no links in an invalid file " +
+            "(missing opening square bracket)",
+            List.of(),
+            MarkdownParse.getLinks(breaking_test_2)
+        );
+    }
+
+    @Test
+    public void testGetLinks_breakingTest3() throws IOException {
+        String breaking_test_3 =
+            Files.readString(Path.of("breaking_test_3.md"));
+        assertEquals(
+            "getLinks() should find no link in an invalid file " +
+            "(missing closing parenthesis)",
+            List.of(),
+            MarkdownParse.getLinks(breaking_test_3)
+        );
+    }
 }
