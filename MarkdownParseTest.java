@@ -29,7 +29,6 @@ public class MarkdownParseTest {
         assertEquals(
             "getLinks() should find only valid links",
             List.of(
-                "https://github.com/Cubified",
                 "https:/https://ucsd-cse15l-w22.github.io/week/week3"
             ),
             MarkdownParse.getLinks(breaking_test)
@@ -66,8 +65,6 @@ public class MarkdownParseTest {
         String str =
             Files.readString(Path.of("test-file2.md"));
         assertEquals(
-            "getLinks() should find no link in an invalid file " +
-            "(missing closing parenthesis)",
             List.of("https://something.com", "some-page.html"),
             MarkdownParse.getLinks(str)
         );
@@ -77,8 +74,6 @@ public class MarkdownParseTest {
         String str =
             Files.readString(Path.of("test-file3.md"));
         assertEquals(
-            "getLinks() should find no link in an invalid file " +
-            "(missing closing parenthesis)",
             List.of(),
             MarkdownParse.getLinks(str)
         );
@@ -88,8 +83,6 @@ public class MarkdownParseTest {
         String str =
             Files.readString(Path.of("test-file4.md"));
         assertEquals(
-            "getLinks() should find no link in an invalid file " +
-            "(missing closing parenthesis)",
             List.of(),
             MarkdownParse.getLinks(str)
         );
@@ -99,8 +92,6 @@ public class MarkdownParseTest {
         String str =
             Files.readString(Path.of("test-file5.md"));
         assertEquals(
-            "getLinks() should find no link in an invalid file " +
-            "(missing closing parenthesis)",
             List.of(),
             MarkdownParse.getLinks(str)
         );
@@ -110,8 +101,6 @@ public class MarkdownParseTest {
         String str =
             Files.readString(Path.of("test-file6.md"));
         assertEquals(
-            "getLinks() should find no link in an invalid file " +
-            "(missing closing parenthesis)",
             List.of(),
             MarkdownParse.getLinks(str)
         );
@@ -121,8 +110,6 @@ public class MarkdownParseTest {
         String str =
             Files.readString(Path.of("test-file7.md"));
         assertEquals(
-            "getLinks() should find no link in an invalid file " +
-            "(missing closing parenthesis)",
             List.of(),
             MarkdownParse.getLinks(str)
         );
@@ -132,8 +119,6 @@ public class MarkdownParseTest {
         String str =
             Files.readString(Path.of("test-file8.md"));
         assertEquals(
-            "getLinks() should find no link in an invalid file " +
-            "(missing closing parenthesis)",
             List.of(),
             MarkdownParse.getLinks(str)
         );
