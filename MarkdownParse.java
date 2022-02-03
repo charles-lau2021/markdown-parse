@@ -1,3 +1,5 @@
+//mine
+
 // File reading code from https://howtodoinjava.com/java/io/java-read-file-to-string-examples/
 import java.io.IOException;
 import java.nio.file.Files;
@@ -11,6 +13,7 @@ public class MarkdownParse {
         // the next )
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
+<<<<<<< HEAD
             System.out.println("first "+ currentIndex);
             int nextOpenBracket = markdown.indexOf("[", currentIndex);
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
@@ -31,6 +34,30 @@ public class MarkdownParse {
             }
             currentIndex = closeParen + 1;
             System.out.println("second "+ currentIndex);
+=======
+            int nextOpenBracket = markdown.indexOf("[", currentIndex),
+                nextCloseBracket = markdown.indexOf("]", nextOpenBracket),
+                openParen = markdown.indexOf("(", nextCloseBracket),
+                closeParen = markdown.indexOf(")", openParen);
+
+            if(nextOpenBracket > 0 &&
+               markdown.charAt(nextOpenBracket-1) == '!'){
+                // Image, skip
+                currentIndex = nextCloseBracket + 1;
+            } else if(nextOpenBracket >= 0 &&
+                      nextCloseBracket >= 0 &&
+                      nextCloseBracket > nextOpenBracket+1 &&
+                      openParen == nextCloseBracket+1 &&
+                      closeParen >= 0
+            ){
+                // Valid link, add to list
+                toReturn.add(markdown.substring(openParen + 1, closeParen));
+                currentIndex = closeParen + 1;
+            } else {
+                // Invalid link, advance one character
+                currentIndex += 1;
+            }
+>>>>>>> b5e97fcd6f3c9f52f177db859bad64012e104d47
         }
         return toReturn;
     }
