@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.junit.*;
 
-class MarkdownParseTest {
+public class MarkdownParseTest {
     @Test
     public void addition() {
         assertEquals(2, 1 + 1);
