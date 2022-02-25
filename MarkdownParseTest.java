@@ -132,7 +132,7 @@ public class MarkdownParseTest {
 
     @Test
     public void testSnippet1() throws IOException {
-        String contents= Files.readString(Path.of("./snippet1.md"));
+        String contents= Files.readString(Path.of("snippet-file1.md"));
         List<String> expect = List.of();
         assertEquals(MarkdownParse.getLinks(contents), expect);
     }
