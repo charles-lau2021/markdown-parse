@@ -1,1 +1,1 @@
-[link]alskdaklsnd(randomlink)
+[link]abc123(randomlink)
